@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeeSlag</title>
+    <link rel="stylesheet" href="/Projects/Zeeslag/zeeslag.css">
+</head>
+<body>
+    <div class="zeeslag-wrapper">
+        
+        <!-- Main Background -->
+        <img src="/Projects/Zeeslag/Berkay-Images/zeeslag-background.png" alt="zeeslag-background" class="zeeslag-background">
+
+        <!-- Game Background -->
+        <div class="game-background">
+            <img src="/Projects/Zeeslag/Berkay-Images/control-panel.png" alt="control-panel" class="control-panel">
+        </div> 
+        
+        <!-- Game Part 1 -->
+        <div class="game-part-1">
+
+            <!-- Start Game Button -->
+            <button class="start-game-button">Start The Game</button>
+            
+            <!-- Restart Game Button -->
+            <button class="restart-game-button">Restart</button>
+
+            <!-- Part 1 ------------------------------------------->
+            <div class="zeeslag-part-1">
+                <div class="game-area-blue"></div> <!-- This is where the game cells will be added -->
+                <div class="game-area-red"></div> <!-- This is where the game cells will be added -->
+            </div>
+
+            <!-- Part 2 ------------------------------------------->
+            <div class="zeeslag-part-2">
+         
+            <!-- Blue Ships -->
+            <div class="ship-1">S1</div>
+            <div class="ship-2">S2</div>
+            <div class="ship-3">S3</div>
+            <div class="ship-4">S4</div>
+            <div class="ship-5">S5</div>
+
+            <!-- Red Ships -->
+            <div class="ship-6">S1</div>
+            <div class="ship-7">S2</div>
+            <div class="ship-8">S3</div>
+            <div class="ship-9">S4</div>
+            <div class="ship-10">S5</div>
+            </div>
+
+            <!-- TEAMS -->
+            <h1 class="team-blue">Team Blue</h1>
+            <h1 class="team-red">Team Red</h1>
+
+            <!-- Confirm Button -->
+            <button class="ready-button">Ready</button>
+            
+            <!-- Reset Button -->
+            <button class="reset-button">Reset</button>
+            <button class="reset-button2">Reset</button>
+            
+            <!-- Battle Button -->
+            <button class="battle-button">Battle</button> 
+        
+            <!-- Part 3 ------------------------------------------->
+            <div class="zeeslag-part-3"></div>
+
+            <!-- Information -->
+            <p class="information-1">Press 'Ready' to pass your turn to the Red Team.</p>
+            <p class="information-2">Press 'Reset' to reset your placement.</p>
+            <p class="information-3">Press 'Battle' to fight.</p>
+            <p class="information-4">Blue Team Score: 0</p>
+            <p class="information-5">Red Team Score: 0</p>
+            <p class="information-6">Bullets: 5</p>
+            <p class="information-7">Blue Team's Turn</p>
+            <p class="information-8">Red Team's Turn</p>
+        </div>
+    </div>
+    <script src="/Projects/Zeeslag/zeeslag.js"></script>
+</body>
+</html>

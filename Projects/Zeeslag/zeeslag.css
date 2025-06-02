@@ -1,0 +1,374 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.clicked {
+    pointer-events: none;  /* Disable clicking again */
+}
+
+.zeeslag-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1000, 1fr);
+    grid-template-rows: repeat(1000, 1fr);
+}
+
+.zeeslag-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 0; /* Lower value → stays in the background */
+}
+
+.game-background {
+    grid-column-start: 1;
+    grid-column-end: 1001;
+    grid-row-start: 1;
+    grid-row-end: 1001;
+    z-index: 1; /* Lower value → stays in the background */
+}
+
+.control-panel {
+    height: 100%;
+    width: 100%;
+}
+
+.game-part-1 {
+    display: grid;
+    grid-template-columns: repeat(1000, 1fr);
+    grid-template-rows: repeat(1000, 1fr);
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 8px 8px 8px 8px;
+    background-color: rgba(23, 87, 129, 0.5); /* control panel background color and 0.5 background transparency */
+    grid-column-start: 167;
+    grid-column-end: 852;  
+    grid-row-start: 174;
+    grid-row-end: 831;
+    z-index: 1; /* Lower value → stays in the background */
+}
+
+.start-game-button {
+    grid-column-start: 231;
+    grid-column-end: 771;  
+    grid-row-start: 401;
+    grid-row-end: 601;
+    font-size: 4.3vw;
+    border: 3px solid black;
+    border-radius: 45% 10px;
+    background-color: rgb(66, 113, 214, 0.85);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.restart-game-button {
+    grid-column-start: 231;
+    grid-column-end: 771;  
+    grid-row-start: 401;
+    grid-row-end: 601;
+    font-size: 4.3vw;
+    border: 3px solid black;
+    border-radius: 30px;
+    background-color: rgb(66, 113, 214, 0.85);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+
+}
+
+.restart-game-button:hover {
+    transform: scale(1.08); /* 8% bigger cells when hover */
+    background-color: rgba(83, 154, 240, 0.95);
+}
+
+.start-game-button:hover {
+    transform: scale(1.08); /* 8% bigger cells when hover */
+    background-color: rgba(83, 154, 240, 0.95);
+}
+
+/* PART-1 */
+.zeeslag-part-1 {
+    grid-column-start: 241;
+    grid-column-end: 761;
+    grid-row-start: 11;
+    grid-row-end: 991;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.game-area-blue {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columns */
+    grid-template-rows: repeat(10, 1fr);    /* 10 rows */
+    background-color: rgba(165, 164, 164, 0.5); /* 0.5 for background transparency */
+}
+
+.game-area-red {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10 columns */
+    grid-template-rows: repeat(10, 1fr);    /* 10 rows */
+    background-color: rgba(165, 164, 164, 0.5); /* 0.5 for background transparency */
+}
+
+.game-cell-blue {
+    background-color: rgb(224, 224, 224, 0.8); /* 0.8 for background transparency */
+    cursor: pointer;
+    border: 1px solid #000000;
+    transition: transform 0.2s ease;
+}
+
+.game-cell-red {
+    background-color: rgb(224, 224, 224, 0.8); /* 0.8 for background transparency */
+    cursor: pointer;
+    border: 1px solid #000000;
+    transition: transform 0.2s ease;
+}
+
+.game-cell-red:hover, .game-cell-blue:hover {
+    background-color: rgba(169, 169, 169, 0.9);
+}
+
+/* PART-2 */
+.zeeslag-part-2 {
+    grid-column-start: 87;
+    grid-column-end: 139;
+    grid-row-start: 124;
+    grid-row-end: 605;
+}
+
+.team-blue {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    grid-column-start: 11;
+    grid-column-end: 219;
+    grid-row-start: 11;
+    grid-row-end: 81;
+    color: blue;
+    border: 3px solid black;
+    background-color: rgb(0, 0, 0,0.6);
+}
+
+.team-red {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    grid-column-start: 11;
+    grid-column-end: 219;
+    grid-row-start: 11;
+    grid-row-end: 81;
+    color: red;
+    border: 3px solid black;
+    background-color: rgb(0, 0, 0,0.6);
+}
+
+.ready-button {
+    grid-column-start: 11;
+    grid-column-end: 219;
+    grid-row-start: 802;
+    grid-row-end: 900;
+    border: 2px solid black;
+    font-size: 2.4vw;
+    border-radius: 20px;
+    background-color: rgb(66, 113, 214, 0.85);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.reset-button {
+    grid-column-start: 11;
+    grid-column-end: 219;
+    grid-row-start: 667;
+    grid-row-end: 765;
+    border: 2px solid black;
+    font-size: 2.4vw;
+    border-radius: 20px;
+    background-color: rgb(66, 113, 214, 0.85);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.reset-button2 {
+    grid-column-start: 11;
+    grid-column-end: 219;
+    grid-row-start: 667;
+    grid-row-end: 765;
+    border: 2px solid black;
+    font-size: 2.4vw;
+    border-radius: 20px;
+    background-color: rgba(214, 66, 66, 0.85);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.battle-button {
+    grid-column-start: 11;
+    grid-column-end: 219;
+    grid-row-start: 802;
+    grid-row-end: 900;
+    border: 2px solid black;
+    font-size: 2.4vw;
+    border-radius: 20px;
+    background-color: rgba(214, 66, 66, 0.85);
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.battle-button:hover {
+    transform: scale(1.04); /* 4% bigger cells when hover */
+    background-color: rgba(240, 83, 83, 0.95);
+}
+
+.reset-button:hover {
+    transform: scale(1.04); /* 4% bigger cells when hover */
+    background-color: rgba(83, 154, 240, 0.95);
+}
+
+.reset-button2:hover {
+    transform: scale(1.04); /* 4% bigger cells when hover */
+    background-color: rgba(240, 83, 83, 0.95);
+}
+
+.ready-button:hover {
+    transform: scale(1.04); /* 4% bigger cells when hover */
+    background-color: rgba(83, 154, 240, 0.95);
+}
+
+.hover-effect {
+    background-color: rgba(240, 83, 83, 0.95);
+}
+
+/* Ships */
+.ship-1, .ship-2, .ship-3, .ship-4, .ship-5 {
+    border: 2px solid blue;
+    background-color: rgb(0, 0, 255, 0.5);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    position: relative; /* Ensure ships can be dragged */
+}
+
+.ship-6, .ship-7, .ship-8, .ship-9, .ship-10 {
+    border: 2px solid red;
+    background-color: rgb(255, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    position: relative; /* Ensure ships can be dragged */
+}
+
+.ship-1 { height: 56px; width: 59px; }
+.ship-2 { height: 56px; width: 59px; }
+.ship-3 { height: 56px; width: 59px; }
+.ship-4 { height: 56px; width: 59px; }
+.ship-5 { height: 56px; width: 59px; }
+.ship-6 { height: 56px; width: 59px; }
+.ship-7 { height: 56px; width: 59px; }
+.ship-8 { height: 56px; width: 59px; }
+.ship-9 { height: 56px; width: 59px; }
+.ship-10 { height: 56px; width: 59px; }
+
+/* PART-3 */
+.zeeslag-part-3 {
+    grid-column-start: 771;
+    grid-column-end: 991;
+    grid-row-start: 11;
+    grid-row-end: 581;
+    border: 2px solid black;
+    background-color: rgb(66, 113, 214, 0.85);
+}
+
+.information-1 {
+    grid-column-start: 781;
+    grid-column-end: 981;
+    grid-row-start: 21;
+    grid-row-end: 105;
+    font-size: 1.2vw;
+    border: 2px solid black;
+}
+
+.information-2 {
+    grid-column-start: 781;
+    grid-column-end: 981;
+    grid-row-start: 111;
+    grid-row-end: 195;
+    font-size: 1.2vw;
+    border: 2px solid black;
+}
+
+.information-3 {
+    grid-column-start: 781;
+    grid-column-end: 981;
+    grid-row-start: 21;
+    grid-row-end: 105;
+    font-size: 1.2vw;
+    border: 2px solid black;
+}
+
+.information-4 {
+    grid-column-start: 781;
+    grid-column-end: 981;
+    grid-row-start: 21;
+    grid-row-end: 105;
+    font-size: 1.4vw;
+    border: 2px solid black;
+    background-color: rgb(66, 113, 214, 0.85);
+}
+
+.information-5 {
+    grid-column-start: 781;
+    grid-column-end: 981;
+    grid-row-start: 111;
+    grid-row-end: 195;
+    font-size: 1.4vw;
+    border: 2px solid black;
+    background-color: rgba(214, 66, 66, 0.85);
+}
+
+.information-6 {
+    grid-column-start: 781;
+    grid-column-end: 981;
+    grid-row-start: 201;
+    grid-row-end: 295;
+    font-size: 2.3vw;
+    display: flex;
+    justify-content: center;
+    border: 2px solid black;
+    background-color: rgba(115, 106, 106, 0.85);
+}
+
+.information-7 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    grid-column-start: 11;
+    grid-column-end: 219;
+    grid-row-start: 11;
+    grid-row-end: 179;
+    color: blue;
+    font-size: 2.4vw;
+    border: 3px solid black;
+    background-color: rgb(0, 0, 0,0.6);
+}
+
+.information-8 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    grid-column-start: 11;
+    grid-column-end: 219;
+    grid-row-start: 11;
+    grid-row-end: 179;
+    color: red;
+    font-size: 2.4vw;
+    border: 3px solid black;
+    background-color: rgb(0, 0, 0,0.6);
+}
+
+
