@@ -736,6 +736,14 @@ footer .text span a:hover {
         align-items: center;
     }
 
+    .contact form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+
 }
 
 @media (max-width: 700px) {
@@ -743,6 +751,21 @@ footer .text span a:hover {
     .contact .button button:nth-of-type(2) {
         width: 100%;
         font-size: 1rem;
+        
+    }
+
+    .contact form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content .button button{
+        font-size: 1.2rem;
+    }
+
+    .skills .content .boxes {
+        width: 80%;
     }
 }
 
@@ -773,8 +796,7 @@ footer .text span a:hover {
 
     .contact .button button:nth-of-type(1),
     .contact .button button:nth-of-type(2) {
-        width: 100%;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
      
 }
